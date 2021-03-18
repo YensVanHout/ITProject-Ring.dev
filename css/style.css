@@ -36,36 +36,6 @@ body {
     background-color: var(--c-nero) !important;
 }
 
-/* GAME PAGINA */
-.answers {
-    margin: 10% 0;
-}
-
-.quote{
-    margin-top: 32px;
-}
-
-.quote,
-.name {
-    padding: 12px;
-    font-size: 1.5rem;
-}
-
-.character,
-.movie {
-    background-color: var(--c-fiord);
-    color: var(--c-lime-slice); 
-}
-
-.score p {
-    font-size: 2.4rem;
-}
-
-.btn:hover{
-    color: white;
-    background-color: var(--c-wave-jumper);
-}
-
 /* FOOTER CSS */
 
 footer {
@@ -77,16 +47,7 @@ footer {
     background-color: #f5f5f5;
 }
 
-                                                        /* :is() is een andere manier om meerdere delen te selecteren zoals footer a, footer p, ....*/
+/* :is() is een andere manier om meerdere delen te selecteren zoals footer a, footer p, ....*/
 footer :is(a, p) {
     color: white;
 }
-
-/*intro pagina joey start hier*/
-
-
-
-
-
-
-/*intro pagina joey eindigt hier */
