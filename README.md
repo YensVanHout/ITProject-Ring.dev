@@ -9,6 +9,8 @@ Gelieve volgende folderstructuur te respecteren
 |── img
 │   ├── globale images voor meerdere pagina's
 │   └── folders maken voor specifieke pagina's
+|── js
+│   └── scripts
 |── index.html
 └── HTML Paginas hier zetten
 ```
