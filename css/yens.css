@@ -27,10 +27,6 @@
     color: var(--c-lime-slice); 
 }
 
-.score p {
-    font-size: 2.4rem;
-}
-
 .btn:hover{
     color: white;
     background-color: var(--c-wave-jumper);
@@ -38,15 +34,16 @@
 
 .timerbackground{
     width: 60%;
-    height: .5vh;
+    height: .25vh;
     background-color: var(--c-wave-jumper);
     z-index: -499;
 }
 
 .timerforeground{
     width: 100%;
-    height: 1vh;
+    height: 0.5vh;
     background-color: var(--c-saratoga);
-    transform-origin: center center;
+    transform-origin: center;
     transform: translateY(-25%);
+    transition: all 1s linear;
 }
