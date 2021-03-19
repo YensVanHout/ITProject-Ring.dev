@@ -57,7 +57,7 @@
 
             <!-- HIER KOMT DE CONTENT VAN DE PAGINA -->
             <div class="question">
-                <div class="quote text-center">Van wie komt de quote en uit welke film:<br><span
+                <div class="quote text-center fs-3">Van wie komt de quote en uit welke film:<br><span
                         class="quoteOutput">“There is only one Lord of the Ring, only one who
                         can bend it to his
                         will. And he
@@ -67,40 +67,39 @@
                 <div class="timerbackground mx-auto">
                     <div class="timerforeground mx-auto"></div>
                 </div>
-                <div class="timertext text-center fs-2">
+                <div class="timertext text-center fs-3">
                     <p>2:00</p>
                 </div>
             </div>
 
-
             <div class="answers">
                 <div class="characters d-flex row">
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1">
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
                         <div class="name text-center">Frodo Baggins</div>
                     </div>
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1">
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
                         <div class="name text-center">Sam Gamgee</div>
                     </div>
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1">
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
                         <div class="name text-center">Legolas Greenleaf</div>
                     </div>
                 </div>
                 <hr>
                 <div class="movies d-flex row">
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1">
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
                         <div class="name text-center">The Lord of the Rings: The Fellowship of the Ring</div>
                     </div>
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1">
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
                         <div class="name text-center">The Lord of the Rings: The Two Towers</div>
                     </div>
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1">
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
                         <div class="name text-center">The Lord of the Rings: The Return of the King</div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center fs-4">
-                <p class="score">0/0</p>
+            <div class="text-center">
+                <p class="score fs-1">0/0</p>
             </div>
 
 
@@ -120,7 +119,7 @@
         let score = 0;
         let outOf = 0;
         let totalscore;
-        let scoretext = document.querySelectorAll(".score");
+        let scoretext = document.querySelector(".score");
 
         setInterval(() => {
             if (time > 1) {
@@ -142,14 +141,13 @@
 
             } else {
                 //reset to default values
-                time = 120;
+                time = 121;
                 width = 100;
 
                 let randomgen = Math.random() < 0.5 ? 0 : 1;
 
                 score = score + randomgen;
                 outOf++;
-                //BUG: NOT SETTINGS VALUES
                 scoretext.innerHTML = score + "/" + outOf;
 
             }

@@ -18,7 +18,6 @@
 .quote,
 .name {
     padding: 12px;
-    font-size: 1.5rem;
 }
 
 .character,
@@ -45,5 +44,5 @@
     background-color: var(--c-saratoga);
     transform-origin: center;
     transform: translateY(-25%);
-    transition: all 1s linear;
+    /* transition: all 1s ease; */
 }
