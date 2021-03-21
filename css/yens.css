@@ -26,8 +26,7 @@
     color: var(--c-lime-slice); 
 }
 
-.btn:hover{
-    color: white;
+.btn:hover, .close:hover{
     background-color: var(--c-wave-jumper);
 } 
 
@@ -45,4 +44,17 @@
     transform-origin: center;
     transform: translateY(-25%);
     /*transition: width 0.99s ease;*/
+}
+
+.close{
+    margin-top: 10px;
+    background-color: var(--c-fiord);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color .3s linear;
 }

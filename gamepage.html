@@ -56,6 +56,13 @@
         <div class="container">
 
             <!-- HIER KOMT DE CONTENT VAN DE PAGINA -->
+
+            <div class="row">
+                <div class="col-lg-11 col-sm-12"></div>
+                <button type="button" class="close col-lg-1 col-sm-12" aria-label="Close">
+                    <span aria-hidden="true">Close game</span>
+                  </button>
+            </div>
             <div class="question">
                 <div class="quote text-center fs-3">Van wie komt de quote en uit welke film:<br><span
                         class="quoteOutput">“There is only one Lord of the Ring, only one who
@@ -112,6 +119,10 @@
     </footer>
 
     <script>
+
+        let close = document.querySelector(".close");
+        close.addEventListener("click",()=> window.close());
+
         let timerbar = document.querySelector(".timerforeground");
         let timertext = document.querySelector(".timertext");
         let scoretext = document.querySelector(".score");
