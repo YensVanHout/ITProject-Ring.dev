@@ -44,5 +44,5 @@
     background-color: var(--c-saratoga);
     transform-origin: center;
     transform: translateY(-25%);
-    /* transition: all 1s ease; */
+    /*transition: width 0.99s ease;*/
 }

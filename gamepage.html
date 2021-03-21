@@ -74,26 +74,26 @@
 
             <div class="answers">
                 <div class="characters d-flex row">
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
-                        <div class="name text-center">Frodo Baggins</div>
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="Frodo Baggins">
+                        <p class="name text-center">Frodo Baggins</p>
                     </div>
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
-                        <div class="name text-center">Sam Gamgee</div>
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="Sam Gamgee">
+                        <p class="name text-center">Sam Gamgee</p>
                     </div>
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
-                        <div class="name text-center">Legolas Greenleaf</div>
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="Legolas Greenleaf">
+                        <p class="name text-center">Legolas Greenleaf</p>
                     </div>
                 </div>
                 <hr>
                 <div class="movies d-flex row">
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
-                        <div class="name text-center">The Lord of the Rings: The Fellowship of the Ring</div>
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="The Lord of the Rings: The Fellowship of the Ring">
+                        <p class="name text-center">The Lord of the Rings: The Fellowship of the Ring</p>
                     </div>
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
-                        <div class="name text-center">The Lord of the Rings: The Two Towers</div>
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="The Lord of the Rings: The Two Towers">
+                        <p class="name text-center">The Lord of the Rings: The Two Towers</p>
                     </div>
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4">
-                        <div class="name text-center">The Lord of the Rings: The Return of the King</div>
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="The Lord of the Rings: The Return of the King">
+                        <p class="name text-center">The Lord of the Rings: The Return of the King</p>
                     </div>
                 </div>
             </div>
@@ -112,21 +112,23 @@
     </footer>
 
     <script>
+        let timerbar = document.querySelector(".timerforeground");
         let timertext = document.querySelector(".timertext");
-        let timer = document.querySelector(".timerforeground");
+        let scoretext = document.querySelector(".score");
+        
         let time = 121;
-        let width = 100;
+        
+        let totalscore;
         let score = 0;
         let outOf = 0;
-        let totalscore;
-        let scoretext = document.querySelector(".score");
 
         setInterval(() => {
             if (time > 1) {
 
                 time--;
-                width -= 1.2;
 
+                let width = (100 / 120 * time).toFixed(1);
+                
                 let minutes = Math.floor(time / 60);
                 let seconds = time - minutes * 60;
 
@@ -137,7 +139,7 @@
                 let remainder = minutes + ":" + seconds;
 
                 timertext.innerHTML = remainder;
-                timer.style.width = width + "%";
+                timerbar.style.width = width + "%";
 
             } else {
                 //reset to default values
@@ -151,7 +153,6 @@
                 scoretext.innerHTML = score + "/" + outOf;
 
             }
-
         }, 1000);
     </script>
 
