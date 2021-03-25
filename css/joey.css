@@ -24,3 +24,16 @@ iframe{
 div, iframe{
     margin: 0 auto;
 }
+
+
+@media(min-width: 768px){
+    .selectionmenu{
+        margin-top: 150px;
+    }
+}
+
+@media(min-width: 1200px){
+    .selectionmenu{
+        margin-top: 120px;
+    }
+}
