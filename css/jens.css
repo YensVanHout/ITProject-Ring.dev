@@ -1,0 +1,17 @@
+
+
+.knopJa, .knopNee
+{
+        background-color: var(--c-fiord);
+        color: var(--c-lime-slice); 
+}
+
+.cover {
+    max-width: auto;
+    height: 29vh;
+}
+
+.charachter {
+    max-width: auto;
+    height: 21vh;  
+}
