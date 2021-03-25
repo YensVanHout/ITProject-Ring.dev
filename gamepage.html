@@ -58,17 +58,15 @@
             <!-- HIER KOMT DE CONTENT VAN DE PAGINA -->
 
             <div class="row">
-                <div class="col-lg-11 col-sm-12"></div>
+                <div id="search" class="col-lg-1 col-sm-12">I need help</div>
+                <div class="col-lg-10 col-sm-12"></div>
                 <button type="button" class="close col-lg-1 col-sm-12" aria-label="Close">
                     <span aria-hidden="true">Close game</span>
                   </button>
             </div>
             <div class="question">
                 <div class="quote text-center fs-3">Van wie komt de quote en uit welke film:<br><span
-                        class="quoteOutput">“There is only one Lord of the Ring, only one who
-                        can bend it to his
-                        will. And he
-                        does not share power.”</span></div>
+                        class="quoteOutput">“There is only one Lord of the Ring, only one who can bend it to his will. And he does not share power.”</span></div>
             </div>
             <div class="timer col-lg-12 row ">
                 <div class="timerbackground mx-auto">
@@ -120,6 +118,15 @@
 
     <script>
 
+        let quote = document.querySelector(".quoteOutput").textContent;
+
+        document.getElementById('search').onclick = function() {
+    window.open('http://google.com/search?q='+quote);
+};
+
+        document.getElementById('search').onclick = function() {
+    window.open('http://google.com/search?q='+quote);
+
         let close = document.querySelector(".close");
         close.addEventListener("click",()=> window.close());
 
@@ -165,6 +172,9 @@
 
             }
         }, 1000);
+
+
+
     </script>
 
 </body>
