@@ -46,7 +46,7 @@
     /*transition: width 0.99s ease;*/
 }
 
-.close, #search{
+.close{
     margin-top: 10px;
     background-color: var(--c-fiord);
     border: none;
