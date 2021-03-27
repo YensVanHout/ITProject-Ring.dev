@@ -23,7 +23,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-grow-1 flex-shrink-0">
 
         <div class="container-fluid">
-            <a href="#" class="navbar-brand">Ring.dev</a>
+            <a href="#" class="navbar-brand">
+                <img src="img/logo.svg" height="30" alt="">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -58,17 +60,15 @@
             <!-- HIER KOMT DE CONTENT VAN DE PAGINA -->
 
             <div class="row">
-                <div class="col-lg-11 col-sm-12"></div>
-                <button type="button" class="close col-lg-1 col-sm-12" aria-label="Close">
-                    <span aria-hidden="true">Close game</span>
-                  </button>
+                <div class="btn help col-lg-1 col-sm-12">Help</div>
+                <div class="col-lg-10 col-sm-12"></div>
+                <button type="button" class="btn close col-lg-1 col-sm-12" aria-label="Close">
+                    <span aria-hidden="true">Close</span>
+                </button>
             </div>
             <div class="question">
-                <div class="quote text-center fs-3">Van wie komt de quote en uit welke film:<br><span
-                        class="quoteOutput">“There is only one Lord of the Ring, only one who
-                        can bend it to his
-                        will. And he
-                        does not share power.”</span></div>
+                <div class="quote text-center fs-3">Van wie komt de quote en uit welke film:<br>“
+                    <span class="quoteOutput">There is only one Lord of the Ring, only one who can bend it to his will. And he does not share power.</span>”</div>
             </div>
             <div class="timer col-lg-12 row ">
                 <div class="timerbackground mx-auto">
@@ -81,25 +81,30 @@
 
             <div class="answers">
                 <div class="characters d-flex row">
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="Frodo Baggins">
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
+                        data-value="Frodo Baggins">
                         <p class="name text-center">Frodo Baggins</p>
                     </div>
                     <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="Sam Gamgee">
                         <p class="name text-center">Sam Gamgee</p>
                     </div>
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="Legolas Greenleaf">
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
+                        data-value="Legolas Greenleaf">
                         <p class="name text-center">Legolas Greenleaf</p>
                     </div>
                 </div>
                 <hr>
                 <div class="movies d-flex row">
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="The Lord of the Rings: The Fellowship of the Ring">
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
+                        data-value="The Lord of the Rings: The Fellowship of the Ring">
                         <p class="name text-center">The Lord of the Rings: The Fellowship of the Ring</p>
                     </div>
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="The Lord of the Rings: The Two Towers">
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
+                        data-value="The Lord of the Rings: The Two Towers">
                         <p class="name text-center">The Lord of the Rings: The Two Towers</p>
                     </div>
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="The Lord of the Rings: The Return of the King">
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
+                        data-value="The Lord of the Rings: The Return of the King">
                         <p class="name text-center">The Lord of the Rings: The Return of the King</p>
                     </div>
                 </div>
@@ -119,16 +124,24 @@
     </footer>
 
     <script>
+        let help = document.querySelector(".help");
+
+
+        help.addEventListener("click", function () {
+            let quote = document.querySelector(".quoteOutput").textContent;
+            window.open('http://google.com/search?q=' + quote);
+        })
+
 
         let close = document.querySelector(".close");
-        close.addEventListener("click",()=> window.close());
+        close.addEventListener("click", () => window.close());
 
         let timerbar = document.querySelector(".timerforeground");
         let timertext = document.querySelector(".timertext");
         let scoretext = document.querySelector(".score");
-        
+
         let time = 121;
-        
+
         let totalscore;
         let score = 0;
         let outOf = 0;
@@ -139,7 +152,7 @@
                 time--;
 
                 let width = (100 / 120 * time).toFixed(1);
-                
+
                 let minutes = Math.floor(time / 60);
                 let seconds = time - minutes * 60;
 
