@@ -56,3 +56,9 @@ footer {
 footer :is(a, p) {
     color: white;
 }
+
+@media(max-width: 768px){
+    ul li a{
+        text-align: center;
+    }
+}
