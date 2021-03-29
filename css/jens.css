@@ -1,17 +1,46 @@
 
+@media (max-width: 1080px) {
+    .knopNee{
+        font-size: 12px;
+    }
+}
+@media (max-width: 900px) {
+    .knopNee{
+        font-size: 10px;
+    }
+}
 
-.knopJa, .knopNee
-{
-        background-color: var(--c-fiord);
-        color: var(--c-lime-slice); 
+
+.knopJa{
+    margin-left: 3rem;
+    background-color: var(--c-fiord);
+    color: var(--c-lime-slice);
+    
+    width: 20vw;
+    height: auto;
+
+}
+
+.knopNee {
+    background-color: var(--c-fiord);
+    color: var(--c-lime-slice);
+    
+    width: 34vw;
+    height: auto;
+
 }
 
 .cover {
-    max-width: auto;
-    height: 29vh;
+    width: 27vw;
+    height: auto;
+    min-width: 210px;
+    min-height: auto;
+
 }
 
 .charachter {
-    max-width: auto;
-    height: 21vh;  
+    width: 34vw;
+    height: auto;
+    min-width: 210px;
+    min-height: auto;
 }
