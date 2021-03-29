@@ -1,14 +1,14 @@
-        let timerbar = document.querySelector(".timerforeground")
-        let timertext = document.querySelector(".timertext")
-        let scoretext = document.querySelector(".score")
+        const timerbar = document.querySelector("#timerforeground")
+        const timertext = document.querySelector("#timertext")
+        const scoretext = document.querySelector("#score")
 
-        let time = 121
+        let time = 120
 
         let score = 0
         let outOf = 0
 
         setInterval(() => {
-            if (time > 1) {
+            if (time > 0) {
 
                 time--
 
@@ -28,7 +28,7 @@
 
             } else {
                 //reset to default values
-                time = 121
+                time = 120
                 width = 100
 
                 //dummy to check score changes
@@ -36,7 +36,7 @@
 
                 score = score + randomgen
                 outOf++
-                
+
                 scoretext.innerHTML = score + "/" + outOf
 
             }

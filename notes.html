@@ -13,6 +13,7 @@
     </script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/yens.css">
+    <script src="js/notes.js" defer></script>
     <title>The One</title>
 </head>
 
@@ -53,11 +54,20 @@
     <div class="flex-grow-1 flex-shrink-0">
         <div class="container">
             <!-- HIER KOMT DE CONTENT VAN DE PAGINA -->
-              <div class="col-lg-12 mt-3">
+            <div class="col-lg-12 mt-3">
                 <div class="form-group">
-                  <textarea placeholder="Type your notes here..." class="form-control test"  rows="16"></textarea>
+                    <div class="grow-wrap">
+                        <textarea placeholder="Type your notes here..." class="form-control" id="area" rows="3"
+                            onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="btn col-lg-2 col-sm-12 m-1 controls" id="save">Save</div>
+                        <div class="btn col-lg-2 col-sm-12 m-1 controls" id="clear">Clear</div>
+                        <div class="btn col-lg-2 col-sm-12 m-1 controls" id="download">Download Notes</div>
+                        <div class="btn col-lg-2 col-sm-12 m-1 controls" id="load">Load Notes</div>
+                    </div>
                 </div>
-              </div>
+            </div>
 
         </div>
     </div>
@@ -67,4 +77,5 @@
         </div>
     </footer>
 </body>
+
 </html>
