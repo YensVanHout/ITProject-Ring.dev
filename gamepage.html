@@ -13,8 +13,7 @@
     </script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/yens.css">
-    <script src="js/timer.js" defer></script>
-    <script src="js/topbuttons.js" defer></script>
+    <script src="js/gamepage.js" defer></script>
 
     <title>The One</title>
 </head>
@@ -76,36 +75,39 @@
             </div>
             <div id="answers">
                 <div class="characters d-flex row">
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
-                        data-value="Frodo Baggins">
-                        <p class="name text-center">Frodo Baggins</p>
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-name="Frodo Baggins">
+                        <p>Frodo Baggins</p>
                     </div>
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="Sam Gamgee">
-                        <p class="name text-center">Sam Gamgee</p>
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-name="Sam Gamgee">
+                        <p>Sam Gamgee</p>
                     </div>
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
-                        data-value="Legolas Greenleaf">
-                        <p class="name text-center">Legolas Greenleaf</p>
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-name="Gandalf">
+                        <p>Gandalf</p>
                     </div>
                 </div>
                 <hr>
                 <div class="movies d-flex row">
                     <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
-                        data-value="The Lord of the Rings: The Fellowship of the Ring">
-                        <p class="name text-center">The Lord of the Rings: The Fellowship of the Ring</p>
+                        data-movie="The Lord of the Rings: The Fellowship of the Ring">
+                        <p>The Lord of the Rings: The Fellowship of the Ring</p>
                     </div>
                     <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
-                        data-value="The Lord of the Rings: The Two Towers">
-                        <p class="name text-center">The Lord of the Rings: The Two Towers</p>
+                        data-movie="The Lord of the Rings: The Two Towers">
+                        <p>The Lord of the Rings: The Two Towers</p>
                     </div>
                     <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
-                        data-value="The Lord of the Rings: The Return of the King">
-                        <p class="name text-center">The Lord of the Rings: The Return of the King</p>
+                        data-movie="The Lord of the Rings: The Return of the King">
+                        <p >The Lord of the Rings: The Return of the King</p>
                     </div>
                 </div>
+                <div class="d-flex justify-content-center">
+                    <div class="btn controls col-sm-12 col-md12 col-lg-3 fs-4 d-flex justify-content-center" id="submit">
+                        <p>Submit</p>
+                </div>
+                </div>
             </div>
-            <div class="text-center">
-                <p class="fs-1" id="score">0/0</p>
+            <div class="text-center fs-1">
+                <p id="score">0/0</p>
             </div>
         </div>
     </div>
@@ -117,3 +119,4 @@
 </body>
 
 </html>
+
