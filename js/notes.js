@@ -12,7 +12,7 @@ save.addEventListener("click", () => {
         return;
      }
      cookievalue = escape(textarea.value) + ";"
-     document.cookie = "note=" + cookievalue + "; Secure"
+     document.cookie = "note=" + cookievalue + " max-age=2592000; Secure"
      console.log("Setting Cookies : " + "note=" + cookievalue )
 })
 
