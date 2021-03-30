@@ -1,40 +1,39 @@
-        const timerbar = document.querySelector("#timerforeground")
-        const timertext = document.querySelector("#timertext")
-        const scoretext = document.querySelector("#score")
+        const timerbar = document.querySelector("#timerforeground");
+        const timertext = document.querySelector("#timertext");
+        const scoretext = document.querySelector("#score");
 
-        let time = 120
-        let score = 0
-        let outOf = 0
+        let time = 120;
+        let score = 0;
+        let outOf = 0;
 
         setInterval(() => {
             if (time > 0) {
 
-                time--
+                time--;
 
-                let width = (100 / 120 * time).toFixed(1)
+                let width = (100 / 120 * time).toFixed(1);
 
-                let minutes = Math.floor(time / 60)
-                let seconds = time - minutes * 60
+                let minutes = Math.floor(time / 60);
+                let seconds = time - minutes * 60;
 
                 if (seconds < 10) {
-                    seconds = "0" + seconds
+                    seconds = "0" + seconds;
                 }
 
-                let remainder = minutes + ":" + seconds
+                let remainder = minutes + ":" + seconds;
 
-                timertext.innerHTML = remainder
-                timerbar.style.width = width + "%"
+                timertext.innerHTML = remainder;
+                timerbar.style.width = width + "%";
 
             } else {
                 //reset to default values
-                time = 120
-                width = 100
+                time = 120;
+                width = 100;
             }
         }, 1000)
 
         document.querySelector("#help").addEventListener("click", function () {
-            let quote = document.querySelector("#quoteOutput").textContent
-            window.open(('http://google.com/search?q=' + quote), "_blank", "toolbar=yes, scrollbars=yes, resizable=yes")
+            window.open(('http://google.com/search?q=' + document.querySelector("#quoteOutput").textContent), "_blank", "toolbar=yes, scrollbars=yes, resizable=yes");
         })
 
         document.querySelector("#close").addEventListener("click", () => window.close())
@@ -43,36 +42,59 @@
             window.open("/notes.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
         })
 
-        let combination = "";
+        let picked1 = "";
+        let picked2 = "";
 
-        const characters = document.querySelectorAll(".character")
+        const characters = document.querySelectorAll(".character");
 
         for (let index = 0; index < characters.length; index++) {
             characters[index].addEventListener("click", () => {
-                combination += characters[index].dataset.name
-                console.log(combination)
+                characters.forEach(e=>{
+                    e.classList.remove("pickedAnswer");
+                });
+                characters[index].classList.add("pickedAnswer");
+                picked1 = characters[index].dataset.name;
             })
         }
 
-        const movies = document.querySelectorAll(".movie")
+        const movies = document.querySelectorAll(".movie");
 
         for (let index = 0; index < movies.length; index++) {
             movies[index].addEventListener("click", () => {
-                combination += "+" + movies[index].dataset.movie
-                console.log(combination)
+                movies.forEach(e=>{
+                    e.classList.remove("pickedAnswer");
+                });
+                movies[index].classList.add("pickedAnswer");
+                picked2 = movies[index].dataset.movie;
             })
         }
 
-        let correct_answer = "Gandalf+The Lord of the Rings: The Fellowship of the Ring"
+        let correct_answer = "Gandalf+The Lord of the Rings: The Fellowship of the Ring";
+        let combination;
+
 
         document.querySelector("#submit").addEventListener("click", () => {
+            combination = picked1 + "+" + picked2;
+
             if (combination === correct_answer) {
-                score++
-                outOf++
-                scoretext.innerHTML = score + "/" + outOf
+                score++;
+                outOf++;
+                scoretext.innerHTML = score + "/" + outOf;
             } else {
-                outOf++
-                scoretext.innerHTML = score + "/" + outOf
+                outOf++;
+                scoretext.innerHTML = score + "/" + outOf;
             }
-            combination = ""
+
+            combination = "";
+            
+            movies.forEach(e=>{
+                e.classList.remove("pickedAnswer");
+            });
+            
+            characters.forEach(e=>{
+                e.classList.remove("pickedAnswer")
+            });
+
+            time = 120;
+            width = 100;
         })

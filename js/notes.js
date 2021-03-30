@@ -1,42 +1,42 @@
-const save = document.querySelector("#save")
-const clear = document.querySelector("#clear")
-const download = document.querySelector("#download")
-const load = document.querySelector("#load")
-const textarea = document.querySelector("#area")
+const save = document.querySelector("#save");
+const clear = document.querySelector("#clear");
+const download = document.querySelector("#download");
+const load = document.querySelector("#load");
+const textarea = document.querySelector("#area");
 
 clear.addEventListener("click", () => {
-   textarea.value = ""
-   location.reload()
+   textarea.value = "";
+   location.reload();
 })
 
 save.addEventListener("click", () => {
    if (textarea.value == "") {
-      alert("Note cannot be empty.")
+      alert("Note cannot be empty.");
       return;
    }
-   cookievalue = escape(textarea.value) + ";"
-   document.cookie = "note=" + cookievalue + " max-age=2592000; Secure"
-   console.log("Setting Cookies : " + "note=" + cookievalue)
+   cookievalue = escape(textarea.value) + ";";
+   document.cookie = "note=" + cookievalue + " max-age=2592000; Secure";
+   console.log("Setting Cookies : " + "note=" + cookievalue);
 })
 
 load.addEventListener("click", () => {
-   var allcookies = document.cookie
-   console.log("All Cookies : " + allcookies)
+   var allcookies = document.cookie;
+   console.log("All Cookies : " + allcookies);
 
    // Get all the cookies pairs in an array
-   cookiearray = allcookies.split(';')
+   cookiearray = allcookies.split(';');
 
    // Now take key value pair out of this array
    for (var i = 0; i < cookiearray.length; i++) {
-      note = cookiearray[i].split('=')[0]
-      value = cookiearray[i].split('=')[1]
+      note = cookiearray[i].split('=')[0];
+      value = cookiearray[i].split('=')[1];
       console.log("Key is : " + note + " and Value is : " + value);
    }
 
    if (value != undefined) {
-      textarea.value = decodeURI(value)
+      textarea.value = decodeURI(value);
    } else {
-      text.value = ""
+      text.value = "";
    }
 })
 
