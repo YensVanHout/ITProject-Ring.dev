@@ -13,8 +13,13 @@
     </script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/yens.css">
-    <script src="js/timer.js" defer></script>
-    <script src="js/helpandclose.js" defer></script>
+    <script src="js/gamepage.js" defer></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+    <link rel="manifest" href="img/fav/site.webmanifest">
+
     <title>The One</title>
 </head>
 
@@ -55,56 +60,60 @@
     <div class="flex-grow-1 flex-shrink-0">
         <div class="container">
             <!-- HIER KOMT DE CONTENT VAN DE PAGINA -->
-            <div class="row">
-                <div class="btn help col-lg-1 col-sm-12">Help</div>
-                <div class="col-lg-10 col-sm-12"></div>
-                <button type="button" class="btn close col-lg-1 col-sm-12" aria-label="Close">
-                    <span aria-hidden="true">Close</span>
-                </button>
+            <div class="row justify-content-center">
+                <div class="btn col-lg-2 m-1 controls" id="notes">Notes</div>
+                <div class="btn col-lg-2 m-1 controls" id="help">Help</div>
+                <div class="btn col-lg-2 m-1 controls" id="close">Close</div>
             </div>
-            <div class="question">
-                <div class="quote text-center fs-3">Van wie komt de quote en uit welke film<br>“<span class="quoteOutput">There is only one Lord of the Ring, only one who can bend it to his will. And he does not share power.</span>”</div>
+            <div id="question">
+                <div class="text-center fs-3" id="quote">Van wie komt de quote en uit welke film<br>“<span
+                        id="quoteOutput">There is only one Lord of the Ring, only one who can bend it to his will. And
+                        he does not share power.</span>”</div>
             </div>
-            <div class="timer col-lg-12 row ">
-                <div class="timerbackground mx-auto">
-                    <div class="timerforeground mx-auto"></div>
+            <div class="col-lg-12 row" id="timer">
+                <div class="mx-auto" id="timerbackground">
+                    <div class="mx-auto" id="timerforeground"></div>
                 </div>
-                <div class="timertext text-center fs-3">
+                <div class="text-center fs-3" id="timertext">
                     <p>2:00</p>
                 </div>
             </div>
-            <div class="answers">
-                <div class="characters d-flex row">
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
-                        data-value="Frodo Baggins">
-                        <p class="name text-center">Frodo Baggins</p>
+            <div id="answers">
+                <div class="row d-flex justify-content-around characters">
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 fs-4" data-name="Frodo Baggins">
+                        Frodo Baggins
                     </div>
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4" data-value="Sam Gamgee">
-                        <p class="name text-center">Sam Gamgee</p>
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 fs-4" data-name="Sam Gamgee">
+                        Sam Gamgee
                     </div>
-                    <div class="btn character col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
-                        data-value="Legolas Greenleaf">
-                        <p class="name text-center">Legolas Greenleaf</p>
+                    <div class="btn character col-sm-12 col-md-12 col-lg-3 fs-4" data-name="Gandalf">
+                        Gandalf
                     </div>
                 </div>
                 <hr>
-                <div class="movies d-flex row">
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
-                        data-value="The Lord of the Rings: The Fellowship of the Ring">
-                        <p class="name text-center">The Lord of the Rings: The Fellowship of the Ring</p>
+                <div class="row d-flex justify-content-around mt-1 movies">
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 fs-4"
+                        data-movie="The Lord of the Rings: The Fellowship of the Ring">
+                        The Lord of the Rings: The Fellowship of the Ring
                     </div>
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
-                        data-value="The Lord of the Rings: The Two Towers">
-                        <p class="name text-center">The Lord of the Rings: The Two Towers</p>
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 fs-4"
+                        data-movie="The Lord of the Rings: The Two Towers">
+                        The Lord of the Rings: The Two Towers
                     </div>
-                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 mx-auto mt-1 fs-4"
-                        data-value="The Lord of the Rings: The Return of the King">
-                        <p class="name text-center">The Lord of the Rings: The Return of the King</p>
+                    <div class="btn movie col-sm-12 col-md-12 col-lg-3 fs-4"
+                        data-movie="The Lord of the Rings: The Return of the King">
+                        The Lord of the Rings: The Return of the King
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="btn controls col-sm-12 col-md12 col-lg-3 fs-4 d-flex justify-content-center"
+                        id="submit">
+                        Submit
                     </div>
                 </div>
             </div>
-            <div class="text-center">
-                <p class="score fs-1">0/0</p>
+            <div class="text-center fs-1" id="score">
+                0/0
             </div>
         </div>
     </div>
@@ -114,4 +123,5 @@
         </div>
     </footer>
 </body>
+
 </html>
