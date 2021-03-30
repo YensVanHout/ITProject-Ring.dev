@@ -39,7 +39,7 @@
         document.querySelector("#close").addEventListener("click", () => window.close())
 
         document.querySelector("#notes").addEventListener("click", function () {
-            window.open("/notes.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+            window.open("notes.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
         })
 
         let picked1 = "";
