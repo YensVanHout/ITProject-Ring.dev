@@ -1,0 +1,39 @@
+
+:root {
+    --c-nero: #252525;
+    --c-fiord: #4C5D64;
+    --c-wave-jumper: #6C909E;
+    --c-saratoga: #5B5929;
+    --c-lime-slice: #F0FBED;
+}
+
+
+.btnkleur{
+    background-color: var(--c-fiord);
+    color: white;
+}
+
+.btnkleur:hover{
+    background-color: var(--c-wave-jumper);
+    color: white;
+}
+
+iframe{
+    display: block;
+}
+div, iframe{
+    margin: 0 auto;
+}
+
+
+@media(min-width: 768px){
+    .selectionmenu{
+        margin-top: 150px;
+    }
+}
+
+@media(min-width: 1200px){
+    .selectionmenu{
+        margin-top: 120px;
+    }
+}
