@@ -27,6 +27,7 @@
 
             } else {
                 //reset to default values
+                outOf++;
                 time = 120;
                 width = 100;
             }
@@ -34,9 +35,7 @@
 
         document.querySelector("#help").addEventListener("click", function () {
             window.open(('http://google.com/search?q=' + document.querySelector("#quoteOutput").textContent), "_blank", "toolbar=yes, scrollbars=yes, resizable=yes");
-        })
-
-        document.querySelector("#close").addEventListener("click", () => window.close())
+        });
 
         document.querySelector("#notes").addEventListener("click", function () {
             window.open("notes.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
@@ -49,7 +48,7 @@
 
         for (let index = 0; index < characters.length; index++) {
             characters[index].addEventListener("click", () => {
-                characters.forEach(e=>{
+                characters.forEach(e => {
                     e.classList.remove("pickedAnswer");
                 });
                 characters[index].classList.add("pickedAnswer");
@@ -61,7 +60,7 @@
 
         for (let index = 0; index < movies.length; index++) {
             movies[index].addEventListener("click", () => {
-                movies.forEach(e=>{
+                movies.forEach(e => {
                     e.classList.remove("pickedAnswer");
                 });
                 movies[index].classList.add("pickedAnswer");
@@ -71,7 +70,6 @@
 
         let correct_answer = "Gandalf+The Lord of the Rings: The Fellowship of the Ring";
         let combination;
-
 
         document.querySelector("#submit").addEventListener("click", () => {
             combination = picked1 + "+" + picked2;
@@ -86,15 +84,13 @@
             }
 
             combination = "";
-            
-            movies.forEach(e=>{
+
+            movies.forEach(e => {
                 e.classList.remove("pickedAnswer");
             });
-            
-            characters.forEach(e=>{
+
+            characters.forEach(e => {
                 e.classList.remove("pickedAnswer")
             });
 
-            time = 120;
-            width = 100;
         })

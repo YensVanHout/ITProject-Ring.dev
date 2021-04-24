@@ -71,7 +71,11 @@
     transition: background-color .3s linear;
 }
 
-
+@media(max-width: 768px){
+    .character,.movie{
+        margin-bottom: 1%;
+    }
+}
 
 /* NOTES */
 #area {
