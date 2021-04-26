@@ -1,0 +1,66 @@
+:root {
+    --c-nero: #252525;
+    --c-fiord: #4c5d64;
+    --c-wave-jumper: #6C909E;
+    --c-saratoga: #5B5929;
+    --c-lime-slice: #F0FBED;
+}
+
+.option {
+    margin-top: 10px;
+    background-color: var(--c-fiord);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.lbtn{
+    height: 30vh;
+    background-color: rgba(76, 93, 100,1);
+    border: 1px solid var(--c-wave-jumper);
+    position: relative;
+    line-height: 25vh;
+}
+
+.lbtn, .caps{
+    text-transform:uppercase;
+    cursor: pointer;
+    user-select: none;
+}
+
+.img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.fn:hover .img{
+    background-image: url(fortnite.gif);
+    background-size: cover;
+}
+
+.ff:hover .img{
+    background-image: url(fifa.gif);
+    background-size: cover;
+}
+
+.lr:hover .img{
+    background-image: url(lotr.gif);
+    background-size: cover;
+}
+
+.lg:hover .img{
+    background-image: url(lego.gif);
+    background-size: cover;
+}
+
+@media(max-width: 768px){
+    .lbtn{
+        margin-bottom: 5%;
+    }
+}
