@@ -1,37 +1,22 @@
 
 @media (max-width: 1080px) {
-    .knopNee{
-        font-size: 12px;
-    }
+
 }
 @media (max-width: 900px) {
-    .knopNee{
-        font-size: 10px;
-
-    }
 
 
 }
 
 
-.knopJa{
-    margin-left: 3rem;
+.knopJa,.knopNee{
+
     background-color: var(--c-fiord);
     color: var(--c-lime-slice);
-    
-    width: 20vw;
-    height: auto;
+
 
 }
 
-.knopNee {
-    background-color: var(--c-fiord);
-    color: var(--c-lime-slice);
-    
-    width: 35vw;
-    height: auto;
 
-}
 
 .cover {
     width: 27vw;
@@ -39,11 +24,4 @@
     min-width: 210px;
     min-height: auto;
 
-}
-
-.charachter {
-    width: 34vw;
-    height: auto;
-    min-width: 210px;
-    min-height: auto;
 }
