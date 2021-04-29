@@ -31,6 +31,14 @@ app.get('/notes',(req:any,res:any)=>{
     res.render('notes');
 });
 
+app.get('/check', (req: any, res:any) => {
+    res.render('check');
+});
+
+app.get('/end', (req: any, res:any) =>{
+    res.render('end');
+})
+
 //Als je een foutieve pagina opgeeft krijg je automatisch de 404-page te zien
 app.use((req:any, res:any) => {
     res.status(404);

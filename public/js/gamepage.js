@@ -28,8 +28,7 @@
             } else {
                 //reset to default values
                 outOf++;
-                time = 120;
-                width = 100;
+                window.location.replace("/check");
             }
         }, 1000)
 
@@ -83,14 +82,9 @@
                 scoretext.innerHTML = score + "/" + outOf;
             }
 
-            combination = "";
+            cookievalue = (score + "/" + outOf).toString() + ";";
+            document.cookie = "score=" + cookievalue + " max-age=2592000; Secure";
 
-            movies.forEach(e => {
-                e.classList.remove("pickedAnswer");
-            });
-
-            characters.forEach(e => {
-                e.classList.remove("pickedAnswer")
-            });
+            window.location.replace("/check");
 
         })
