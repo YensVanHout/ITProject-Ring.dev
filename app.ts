@@ -52,17 +52,17 @@ app.get('/game',(req:any,res:any)=>{
 
     //TODO: FIX THIS MESS
 
-    let promise1 = fetch((baseurl + quoteurl + random_id_hex),
-    {
-        method: 'GET',
-        headers: {
-            'Accept': '*/*',
-            'Authorization': 'Bearer ' + frighten
-        }}).then((response : any) => {
-        quote = response.json();
-    }).then((response : any) =>{
-        console.log(quote);
-    });
+    // let promise1 = fetch((baseurl + quoteurl + random_id_hex),
+    // {
+    //     method: 'GET',
+    //     headers: {
+    //         'Accept': '*/*',
+    //         'Authorization': 'Bearer ' + frighten
+    //     }}).then((response : any) => {
+    //     quote = response.json();
+    // }).then((response : any) =>{
+    //     console.log(quote);
+    // });
 
 
     res.render('game');
