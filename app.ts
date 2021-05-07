@@ -27,7 +27,6 @@ app.get('/verificationlr',(req:any,res:any)=>{
 app.get('/game',(req:any,res:any)=>{
     let ran1 : any = {} ;
     ran1 = randomQuote();
-    console.log(ran1);
     let ran2 : any = {};
     ran2 = randomQuote();
     let ran3 : any = {};
