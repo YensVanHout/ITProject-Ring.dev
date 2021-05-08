@@ -1,11 +1,42 @@
+
+
 .knopJa,.knopNee{
     background-color: var(--c-fiord);
     color: var(--c-lime-slice);
 }
 
 .cover {
-    width: 20vw;
+    width: 18vw;
     height: auto;
     min-width: 210px;
     min-height: auto;
+}
+
+@media(min-width: 991px){
+    
+    
+    .btn{
+        top: 50%;
+        height: 150px;
+        margin-top: 150px;
+        
+    }
+    .contentCenter p{
+        margin-top: 10%;
+        font-weight: 300;
+        padding: 20px 0px;
+    }
+    .cover{
+
+        order: 0;
+        width: 340px;
+        height: auto;
+    }
+
+
+    
+}
+
+@media(max-width: 991px){
+    .cover {order: -1;}
 }
