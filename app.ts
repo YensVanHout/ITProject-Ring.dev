@@ -57,6 +57,7 @@ app.get('/notes',(req:any,res:any)=>{
 });
 
 app.get('/check', (req: any, res:any) => {
+
     res.render('check');
 });
 

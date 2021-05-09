@@ -10,12 +10,13 @@
     height: auto;
     min-width: 210px;
     min-height: auto;
+    /*295 : 428*/
 }
 
 @media(min-width: 991px){
     
     
-    .btn{
+    .btnCheck{
         top: 50%;
         height: 150px;
         margin-top: 150px;
@@ -23,7 +24,7 @@
     }
     .contentCenter p{
         margin-top: 10%;
-        font-weight: 300;
+        font-size: 2rem;
         padding: 20px 0px;
     }
     .cover{

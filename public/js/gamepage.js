@@ -69,6 +69,7 @@
 
         let correct_answer = "Gandalf+The Lord of the Rings: The Fellowship of the Ring";
         let combination;
+        let boolJuistFout;
 
         document.querySelector("#submit").addEventListener("click", () => {
             combination = picked1 + "+" + picked2;
@@ -77,13 +78,16 @@
                 score++;
                 outOf++;
                 scoretext.innerHTML = score + "/" + outOf;
+                boolJuistFout = true;
             } else {
                 outOf++;
                 scoretext.innerHTML = score + "/" + outOf;
+                boolJuistFout = false;
             }
 
             cookievalue = (score + "/" + outOf).toString() + ";";
             document.cookie = "score=" + cookievalue + " max-age=2592000; Secure";
+            document.cookie = "bool=" + boolJuistFout +";"+ " max-age=2592000; Secure";
 
             window.location.replace("/check");
 
