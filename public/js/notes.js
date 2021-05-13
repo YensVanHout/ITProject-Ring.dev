@@ -16,8 +16,8 @@ save.addEventListener("click", () => {
       return;
    }
    cookievalue = escape(textarea.value) + ";";
-   document.cookie = "note=" + cookievalue + " max-age=2592000; Secure";
-   console.log("Setting Cookies : " + "note=" + cookievalue);
+   document.cookie = "key=" + cookievalue + " max-age=2592000; Secure";
+   console.log("Setting Cookies : " + "key=" + cookievalue);
 })
 
 load.addEventListener("click", () => {
@@ -29,16 +29,19 @@ load.addEventListener("click", () => {
 
    // Now take key value pair out of this array
    for (var i = 0; i < cookiearray.length; i++) {
-      note = cookiearray[i].split('=')[0];
+      key = cookiearray[i].split('=')[0];
       value = cookiearray[i].split('=')[1];
-      console.log("Key is : " + note + " and Value is : " + value);
+      console.log("Key is : " + key + " and Value is : " + value);
    }
+if (key == "note") {
+   
 
    if (value != undefined) {
       textarea.value = decodeURI(value);
    } else {
       text.value = "";
    }
+}
 })
 
 download.addEventListener("click", () => {
@@ -53,5 +56,5 @@ download.addEventListener("click", () => {
 
 //HIER ALLE CODE OM EEN COOKIE AAN TE MAKEN, DIT KAN JE AANPASSEN NAAR WAT JE NODIG HEBT
 //cookievalue = escape(textarea.value) + ";";
-//document.cookie = "note=" + cookievalue + " max-age=2592000; Secure";
-//console.log("Setting Cookies : " + "note=" + cookievalue);
+//document.cookie = "key=" + cookievalue + " max-age=2592000; Secure";
+//console.log("Setting Cookies : " + "key=" + cookievalue);

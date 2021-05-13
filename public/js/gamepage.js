@@ -40,6 +40,34 @@
             window.open("notes", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
         })
 
+        window.onload=() => {
+            var allcookies = document.cookie;
+            console.log("All Cookies : " + allcookies);
+         
+            // Get all the cookies pairs in an array
+            cookiearray = allcookies.split(';');
+         
+            // Now take key value pair out of this array
+            for (var i = 0; i < cookiearray.length; i++) {
+               key = cookiearray[i].split('=')[0];
+               value = cookiearray[i].split('=')[1];
+               console.log("Key is : " + key + " and Value is : " + value);
+               console.log(value)
+        
+                if(key == "score")
+                {
+                    document.querySelector('#score').innerHTML = value;
+                    let temp = value.split('/')
+                    score = temp[0];
+                    outOf = temp[1];
+
+                    
+                }
+
+        
+            }
+        }
+
         let picked1 = "";
         let picked2 = "";
 
@@ -92,3 +120,4 @@
             window.location.replace("/check");
 
         })
+
