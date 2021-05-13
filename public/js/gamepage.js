@@ -42,7 +42,7 @@ for (var i = 0; i < cookiearray.length; i++) {
   key = cookiearray[i].split("=")[0];
   value = cookiearray[i].split("=")[1];
 
-  if (key == "score") {
+  if (key == " score") {
     scoreCookie = value.split("/");
     score = scoreCookie[0];
     outOf = scoreCookie[1];

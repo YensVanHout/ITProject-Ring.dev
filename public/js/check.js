@@ -16,7 +16,7 @@ for (var i = 0; i < cookiearray.length; i++) {
     boolJuistFout = true;
   }
 
-  if (key == "score") {
+  if (key == " score") {
     document.querySelector("#score").innerHTML = value;
   }
 }
