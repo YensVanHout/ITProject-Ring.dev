@@ -1,123 +1,121 @@
-        const timerbar = document.querySelector("#timerforeground");
-        const timertext = document.querySelector("#timertext");
-        const scoretext = document.querySelector("#score");
+const timerbar = document.querySelector("#timerforeground");
+const timertext = document.querySelector("#timertext");
+const scoretext = document.querySelector("#score");
 
-        let time = 120;
-        let score = 0;
-        let outOf = 0;
+//---------------------- TIMER -------------------------------
 
-        setInterval(() => {
-            if (time > 0) {
+let time = 120;
+let score = 0;
+let outOf = 0;
 
-                time--;
+setInterval(() => {
+  if (time > 0) {
+    time--;
 
-                let width = (100 / 120 * time).toFixed(1);
+    let width = ((100 / 120) * time).toFixed(1);
 
-                let minutes = Math.floor(time / 60);
-                let seconds = time - minutes * 60;
+    let minutes = Math.floor(time / 60);
+    let seconds = time - minutes * 60;
 
-                if (seconds < 10) {
-                    seconds = "0" + seconds;
-                }
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
 
-                let remainder = minutes + ":" + seconds;
+    let remainder = minutes + ":" + seconds;
 
-                timertext.innerHTML = remainder;
-                timerbar.style.width = width + "%";
+    timertext.innerHTML = remainder;
+    timerbar.style.width = width + "%";
+  } else {
+    //reset to default values
+    outOf++;
+    window.location.replace("/check");
+  }
+}, 1000);
 
-            } else {
-                //reset to default values
-                outOf++;
-                window.location.replace("/check");
-            }
-        }, 1000)
+//------------------- COOKIE LEZEN -----------------------------------
 
-        document.querySelector("#help").addEventListener("click", function () {
-            window.open(('http://google.com/search?q=' + document.querySelector("#quoteOutput").textContent), "_blank", "toolbar=yes, scrollbars=yes, resizable=yes");
-        });
+var allcookies = document.cookie;
 
-        document.querySelector("#notes").addEventListener("click", function () {
-            window.open("notes", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
-        })
+cookiearray = allcookies.split(";");
 
-        window.onload=() => {
-            var allcookies = document.cookie;
-            console.log("All Cookies : " + allcookies);
-         
-            // Get all the cookies pairs in an array
-            cookiearray = allcookies.split(';');
-         
-            // Now take key value pair out of this array
-            for (var i = 0; i < cookiearray.length; i++) {
-               key = cookiearray[i].split('=')[0];
-               value = cookiearray[i].split('=')[1];
-               console.log("Key is : " + key + " and Value is : " + value);
-               console.log(value)
-        
-                if(key == "score")
-                {
-                    document.querySelector('#score').innerHTML = value;
-                    let temp = value.split('/')
-                    score = temp[0];
-                    outOf = temp[1];
+for (var i = 0; i < cookiearray.length; i++) {
+  key = cookiearray[i].split("=")[0];
+  value = cookiearray[i].split("=")[1];
 
-                    
-                }
+  if (key == "score") {
+    scoreCookie = value.split("/");
+    score = scoreCookie[0];
+    outOf = scoreCookie[1];
+    scoretext.innerHTML = value;
+  }
+}
 
-        
-            }
-        }
+document.querySelector("#help").addEventListener("click", function () {
+  window.open(
+    "http://google.com/search?q=" +
+      document.querySelector("#quoteOutput").textContent,
+    "_blank",
+    "toolbar=yes, scrollbars=yes, resizable=yes"
+  );
+});
 
-        let picked1 = "";
-        let picked2 = "";
+document.querySelector("#notes").addEventListener("click", function () {
+  window.open(
+    "notes",
+    "_blank",
+    "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=500,height=500"
+  );
+});
 
-        const characters = document.querySelectorAll(".character");
+let picked1 = "";
+let picked2 = "";
 
-        for (let index = 0; index < characters.length; index++) {
-            characters[index].addEventListener("click", () => {
-                characters.forEach(e => {
-                    e.classList.remove("pickedAnswer");
-                });
-                characters[index].classList.add("pickedAnswer");
-                picked1 = characters[index].dataset.name;
-            })
-        }
+const characters = document.querySelectorAll(".character");
 
-        const movies = document.querySelectorAll(".movie");
+for (let index = 0; index < characters.length; index++) {
+  characters[index].addEventListener("click", () => {
+    characters.forEach((e) => {
+      e.classList.remove("pickedAnswer");
+    });
+    characters[index].classList.add("pickedAnswer");
+    picked1 = characters[index].dataset.name;
+  });
+}
 
-        for (let index = 0; index < movies.length; index++) {
-            movies[index].addEventListener("click", () => {
-                movies.forEach(e => {
-                    e.classList.remove("pickedAnswer");
-                });
-                movies[index].classList.add("pickedAnswer");
-                picked2 = movies[index].dataset.movie;
-            })
-        }
+const movies = document.querySelectorAll(".movie");
 
-        let correct_answer = "Gandalf+The Lord of the Rings: The Fellowship of the Ring";
-        let combination;
-        let boolJuistFout;
+for (let index = 0; index < movies.length; index++) {
+  movies[index].addEventListener("click", () => {
+    movies.forEach((e) => {
+      e.classList.remove("pickedAnswer");
+    });
+    movies[index].classList.add("pickedAnswer");
+    picked2 = movies[index].dataset.movie;
+  });
+}
 
-        document.querySelector("#submit").addEventListener("click", () => {
-            combination = picked1 + "+" + picked2;
+let correct_answer =
+  "Gandalf+The Lord of the Rings: The Fellowship of the Ring";
+let combination;
+let boolJuistFout;
 
-            if (combination === correct_answer) {
-                score++;
-                outOf++;
-                scoretext.innerHTML = score + "/" + outOf;
-                boolJuistFout = true;
-            } else {
-                outOf++;
-                scoretext.innerHTML = score + "/" + outOf;
-                boolJuistFout = false;
-            }
+document.querySelector("#submit").addEventListener("click", () => {
+  combination = picked1 + "+" + picked2;
 
-            cookievalue = (score + "/" + outOf).toString() + ";";
-            document.cookie = "score=" + cookievalue + " max-age=2592000; Secure";
-            document.cookie = "bool=" + boolJuistFout +";"+ " max-age=2592000; Secure";
+  if (combination === correct_answer) {
+    score++;
+    outOf++;
+    scoretext.innerHTML = score + "/" + outOf;
+    boolJuistFout = true;
+  } else {
+    outOf++;
+    scoretext.innerHTML = score + "/" + outOf;
+    boolJuistFout = false;
+  }
 
-            window.location.replace("/check");
+  cookievalue = (score + "/" + outOf).toString() + ";";
+  document.cookie = "score=" + cookievalue + " max-age=2592000; Secure";
+  document.cookie = "bool=" + boolJuistFout + ";" + " max-age=2592000; Secure";
 
-        })
-
+  window.location.replace("/check");
+});
