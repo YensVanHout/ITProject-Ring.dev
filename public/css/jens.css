@@ -13,6 +13,13 @@
     /*295 : 428*/
 }
 
+.vertical-center {
+    min-height: 100%;  
+    min-height: 100vh; 
+  
+    display: flex;
+    align-items: center;
+  }
 
 @media(min-width: 991px){
     
