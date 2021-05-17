@@ -19,6 +19,11 @@ for (var i = 0; i < cookiearray.length; i++) {
   if (key == " score") {
     document.querySelector("#score").innerHTML = value;
   }
+
+  if (key == " film") {
+    console.log();
+    document.querySelector(".cover").src = "img/" + value + ".jpg";
+  }
 }
 
 if (boolJuistFout) {

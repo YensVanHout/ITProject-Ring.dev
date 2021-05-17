@@ -47,6 +47,7 @@ app.get("/game", (req: any, res: any) => {
     karakter2: objects[indexes[1]].char,
     karakter3: objects[indexes[2]].char,
     correct: objects[0].char + objects[0].movie,
+    film: objects[0].movie,
   });
 });
 

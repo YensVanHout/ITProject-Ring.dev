@@ -28,6 +28,9 @@ setInterval(() => {
   } else {
     //reset to default values
     outOf++;
+    cookievalue = (score + "/" + outOf).toString() + ";";
+    document.cookie = "score=" + cookievalue + "; max-age=2592000; Secure;";
+    document.cookie = "film=" + movie + "; max-age=2592000; Secure;";
     window.location.replace("/check");
   }
 }, 1000);
@@ -122,8 +125,9 @@ document.querySelector("#submit").addEventListener("click", () => {
   }
 
   cookievalue = (score + "/" + outOf).toString() + ";";
-  document.cookie = "score=" + cookievalue + " max-age=2592000; Secure";
-  document.cookie = "bool=" + boolJuistFout + ";" + " max-age=2592000; Secure";
+  document.cookie = "score=" + cookievalue + "; max-age=2592000; Secure";
+  document.cookie = "bool=" + boolJuistFout + "; max-age=2592000; Secure";
+  document.cookie = "film=" + movie + "; max-age=2592000; Secure;";
 
   window.location.replace("/check"); // redirect naar juist of fout
 });
