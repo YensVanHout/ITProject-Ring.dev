@@ -1,8 +1,8 @@
 <%- include('header') %>
 <script src="./js/check.js" defer></script>
 
-    <div class="flex-grow-1 flex-shrink-0">
-        <div class="container ">
+<div class="flex-grow-1 flex-shrink-0">
+    <div class="container ">
             <!-- HIER KOMT DE CONTENT VAN DE PAGINA -->
             <div class="juistfout mt-5">
                 <h1 class="text-center " id="JuistFout"></h1>
@@ -10,15 +10,22 @@
 
             </div>
             <div class="d-flex justify-content-center">
-                
+
             </div>
             <div class="row d-flex justify-content-center gap-3 contentCenter">
-                <div class="btnCheck  btn knopJa  col-sm-12 col-md-12 col-lg-3 fs-4" onclick="window.location.replace('/game')"><p>Ja</p></div>
+                <div class="btnCheck  btn knopJa  col-sm-12 col-md-12 col-lg-3 fs-4"
+                    onclick="window.location.replace('/game')">
+                    <p>Ja</p>
+                </div>
                 <img src="img/coverFilm1.jpg" class=" cover  mb-5" alt="cover">
-                <div class="btnCheck btn knopNee col-sm-12 col-md-12 col-lg-3 fs-4"><p>Neen rond af </p></div>
+                <div class="btnCheck btn knopNee col-sm-12 col-md-12 col-lg-3 fs-4" 
+                onclick="window.location.replace('/end')">
+                    <p>Neen rond af </p>
+                </div>
             </div>
         </div>
         <div class="text-center fs-1" id="score">
             0/0
         </div>
-<%- include('footer') %>
+    </div>
+    <%- include('footer') %>
