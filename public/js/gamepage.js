@@ -94,28 +94,36 @@ for (let index = 0; index < movies.length; index++) {
   });
 }
 
-let correct_answer =
-  "Gandalf+The Lord of the Rings: The Fellowship of the Ring";
 let combination;
 let boolJuistFout;
 
 document.querySelector("#submit").addEventListener("click", () => {
-  combination = picked1 + "+" + picked2;
+  combination = picked1 + picked2;
 
-  if (combination === correct_answer) {
+  combination = combination.trim();
+  correct_answer = correct_answer.trim();
+  // console.log(combination);
+  // console.log(correct_answer);
+
+  var n = combination.localeCompare(correct_answer); // geeft dit 0 terug dan zijn de stirngs gelijk aan elkaar
+
+  // console.log(n);
+  if (n == 0) {
     score++;
     outOf++;
     scoretext.innerHTML = score + "/" + outOf;
     boolJuistFout = true;
+    //console.log("juist");
   } else {
     outOf++;
     scoretext.innerHTML = score + "/" + outOf;
     boolJuistFout = false;
+    //console.log("fout");
   }
 
   cookievalue = (score + "/" + outOf).toString() + ";";
   document.cookie = "score=" + cookievalue + " max-age=2592000; Secure";
   document.cookie = "bool=" + boolJuistFout + ";" + " max-age=2592000; Secure";
 
-  window.location.replace("/check");
+  window.location.replace("/check"); // redirect naar juist of fout
 });

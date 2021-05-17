@@ -1,5 +1,12 @@
 <%- include('header') %>
 <script src="./js/gamepage.js" defer></script>
+<script>
+    let correct_answer = '<%= correct %>';
+    console.log(correct_answer);
+
+
+
+</script>
 <div class="flex-grow-1 flex-shrink-0">
     <div class="container">
         <!-- HIER KOMT DE CONTENT VAN DE PAGINA -->
@@ -21,34 +28,35 @@
         </div>
         <div id="answers">
             <div class="row d-flex justify-content-around characters">
-                <div class="btn character col-sm-12 col-md-12 col-lg-3 fs-4" data-name="Frodo Baggins">
-                    <%= opties2 %>
+                <div class="btn character col-sm-12 col-md-12 col-lg-3 fs-4" data-name="<%= karakter1 %>">
+                    <%= karakter1 %>
                     <!-- character -->
                 </div>
-                <div class="btn character col-sm-12 col-md-12 col-lg-3 fs-4" data-name="Sam Gamgee">
-                    <%= opties4 %>
+                <div class="btn character col-sm-12 col-md-12 col-lg-3 fs-4" data-name="<%= karakter2 %>">
+                    <%= karakter2 %>
                     <!-- character -->
                 </div>
-                <div class="btn character col-sm-12 col-md-12 col-lg-3 fs-4" data-name="Gandalf">
-                    <%= opties6 %>
+                <div class="btn character col-sm-12 col-md-12 col-lg-3 fs-4" data-name="<%= karakter3 %>">
+                    <%= karakter3 %>
                     <!-- character -->
                 </div>
             </div>
             <hr>
             <div class="row d-flex justify-content-around mt-1 movies">
-                <div class="btn movie col-sm-12 col-md-12 col-lg-3 fs-4"
-                    data-movie="">
-                    <%= opties1 %>
+                <div class="btn movie col-sm-12 col-md-12 col-lg-3 fs-4" data-movie="The Fellowship of the Ring">
+                    The Lord of the Rings: The Fellowship of the Ring
+
                     <!-- movie -->
                 </div>
                 <div class="btn movie col-sm-12 col-md-12 col-lg-3 fs-4"
-                    data-movie="The Lord of the Rings: The Two Towers">
-                    <%= opties3 %>
+                    data-movie="The Two Towers">
+                    The Lord of the Rings: The Two Towers
+
                     <!-- movie -->
                 </div>
                 <div class="btn movie col-sm-12 col-md-12 col-lg-3 fs-4"
-                    data-movie="The Lord of the Rings: The Return of the King">
-                    <%= opties5 %>
+                    data-movie="The Return of the King">
+                    The Lord of the Rings: The Return of the King
                     <!-- movie -->
                 </div>
             </div>
