@@ -1,5 +1,5 @@
 function validateBookingNumber(input) {
-  if (input.value == "ABC123") {
+  if (input.value == "12638320" || "50394767"|| "90406893" || "61198716" ) {
     input.setCustomValidity("");
   } else {
     input.setCustomValidity('"' + input.value + '" is geen juist nummer.');
