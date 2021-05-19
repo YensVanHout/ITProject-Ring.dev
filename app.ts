@@ -26,11 +26,21 @@ app.get("/verificationlr", (req: any, res: any) => {
 
 app.get("/game", (req: any, res: any) => {
   let ran1: any = {};
-  ran1 = randomQuote();
   let ran2: any = {};
-  ran2 = randomQuote();
   let ran3: any = {};
+
+  ran1 = randomQuote();
+  ran2 = randomQuote();
   ran3 = randomQuote();
+
+  while (ran1.char == ran2.char) {
+    ran2 = randomQuote();
+  }
+
+  while (ran1.char == ran3.char || ran2.char == ran3.char) {
+    ran3 = randomQuote();
+  }
+
   let objects: any[] = [ran1, ran2, ran3];
   let indexes: number[] = [0, 1, 2];
 
