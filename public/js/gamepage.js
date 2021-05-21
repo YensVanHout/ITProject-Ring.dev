@@ -31,6 +31,7 @@ setInterval(() => {
     cookievalue = (score + "/" + outOf).toString() + ";";
     document.cookie = "score=" + cookievalue + "; max-age=2592000; Secure;";
     document.cookie = "film=" + movie + "; max-age=2592000; Secure;";
+    document.cookie = "bool=false; max-age=2592000; Secure";
     window.location.replace("/check");
   }
 }, 1000);
