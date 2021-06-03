@@ -18,7 +18,7 @@
   "version": "1.0.0",
   "main": "app.ts",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node ./dist/app.js",
     "build": "tsc",
     "heroku-postbuild": "npm run build"
   },
