@@ -1,5 +1,7 @@
+let boekingsnummers = ["12638320", "50394767", "90406893", "61198716", "11111111"];
+
 function validateBookingNumber(input) {
-  if (input.value == "12638320" || "50394767"|| "90406893" || "61198716" ) {
+  if (boekingsnummers.includes(input.value)) {
     input.setCustomValidity("");
   } else {
     input.setCustomValidity('"' + input.value + '" is geen juist nummer.');

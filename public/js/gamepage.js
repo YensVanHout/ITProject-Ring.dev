@@ -46,7 +46,7 @@ for (var i = 0; i < cookiearray.length; i++) {
   key = cookiearray[i].split("=")[0];
   value = cookiearray[i].split("=")[1];
 
-  if (key == " score") {
+  if (key.trim() == "score") {
     scoreCookie = value.split("/");
     score = scoreCookie[0];
     outOf = scoreCookie[1];
@@ -126,8 +126,8 @@ document.querySelector("#submit").addEventListener("click", () => {
   }
 
   cookievalue = (score + "/" + outOf).toString() + ";";
-  document.cookie = "score=" + cookievalue + "; max-age=2592000; Secure";
-  document.cookie = "bool=" + boolJuistFout + "; max-age=2592000; Secure";
+  document.cookie = "score=" + cookievalue + "; max-age=2592000; Secure;";
+  document.cookie = "bool=" + boolJuistFout + "; max-age=2592000; Secure;";
   document.cookie = "film=" + movie + "; max-age=2592000; Secure;";
 
   window.location.replace("/check"); // redirect naar juist of fout

@@ -10,19 +10,19 @@ for (var i = 0; i < cookiearray.length; i++) {
   key = cookiearray[i].split("=")[0];
   value = cookiearray[i].split("=")[1];
 
-  if (value == "false") {
+  if (value.trim() == "false") {
     boolJuistFout = false;
   } else if (value == "true") {
     boolJuistFout = true;
   }
 
-  if (key == " score") {
+  if (key.trim() == "score") {
     document.querySelector("#score").innerHTML = value;
   }
 
-  if (key == " film") {
+  if (key.trim() == "film") {
     console.log();
-    document.querySelector(".cover").src = "img/" + value + ".jpg";
+    document.querySelector(".cover").src = "img/covers/" + value + ".jpg";
   }
 }
 
