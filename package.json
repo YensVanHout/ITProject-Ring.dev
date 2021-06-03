@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@types/node": "^15.0.2",
     "@types/express": "^4.17.12",
+    "@types/node": "^15.0.2",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "node": "^16.1.0",
@@ -19,8 +19,8 @@
   "main": "app.ts",
   "scripts": {
     "start": "node dist/app.js",
-    "build" : "tsc",
-    "heroku-postbuild" : "npm run build"
+    "build": "tsc",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/YensVanHout/ITProject-Ring.dev#readme",
   "engines": {
-    "node": "14.15.5"
+    "node": "16.x",
+    "npm":"7.x"
   }
 }
