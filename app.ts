@@ -44,7 +44,7 @@ const randomQuote = require("random-lotr-movie-quote");
 app.use(express.static("public"));
 
 //Standaard port 3000
-app.set("port", 3000);
+app.set("port", (process.env.PORT || 3000));
 
 //zet de view engine naar ejs anders krijg je een view engine error.
 app.set("view engine", "ejs");
