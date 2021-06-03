@@ -81,7 +81,7 @@ app.get("/game", (req: any, res: any) => {
   let objects: any[] = [ran1, ran2, ran3];
   let indexes: number[] = [0, 1, 2];
 
-  function shuffle(randomizer) {
+  function shuffle(randomizer : number[]) {
     for (let i = randomizer.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [randomizer[i], randomizer[j]] = [randomizer[j], randomizer[i]];
